@@ -1,0 +1,37 @@
+{
+  "name": "debtly",
+  "version": "1.0.0",
+  "description": "This package.json is purely for git hooks",
+  "private": true,
+  "author": "Bryce Hayden",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QuietOmen/debtly.git"
+  },
+  "homepage": "https://github.com/QuietOmen/debtly#readme",
+  "bugs": {
+    "url": "https://github.com/QuietOmen/debtly/issues"
+  },
+  "keywords": [
+    "React",
+    "Redux",
+    ".NetCore",
+    "Postgres"
+  ],
+  "scripts": {
+    "client-test": "cd ./client && npm run test",
+    "client-lint": "cd ./client && npm run lint",
+    "client-lint:fix": "cd ./client && npm run lint:fix",
+    "pre-push": "cd ./client && npm run precise-commits"
+  },
+  "devDependencies": {
+    "husky": "1.0.0-rc.13"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run pre-push",
+      "...": "..."
+    }
+  }
+}
