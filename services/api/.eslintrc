@@ -1,0 +1,27 @@
+{
+  "extends": ["standard"],
+  "env": {
+    "jest": true
+  },
+  "globals": {
+    "screen": true
+  },
+  "plugins": [
+    "babel",
+    "jest"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "array-bracket-spacing": ["error", "never"],
+    "curly": "off",
+    "generator-star-spacing": "off",
+    "jest/no-identical-title": "error",
+    "jest/no-focused-tests": "error",
+    "jsx-quotes": ["error", "prefer-double"],
+    "object-curly-spacing": ["error", "always"],
+    "space-before-function-paren": ["error", { "anonymous": "never", "named": "never", "asyncArrow": "always" }],
+    "yield-star-spacing": ["error", { "before": false, "after": true }],
+    "no-unused-vars": [2, { "vars": "all", "args": "none", "ignoreRestSiblings": true }],
+    "no-unused-expressions": "off"
+  }
+}
