@@ -16,20 +16,21 @@
   "keywords": [
     "React",
     "Redux",
-    ".NetCore",
     "Postgres"
   ],
   "scripts": {
     "client-test": "cd ./client && npm run test",
     "client-lint": "cd ./client && npm run lint",
     "client-lint:fix": "cd ./client && npm run lint:fix",
-    "pre-push": "cd ./client && npm run precise-commits"
+    "pre-commit": "cd ./client && npm run precise-commits",
+    "pre-push": "node ./scripts/pre-push"
   },
   "devDependencies": {
     "husky": "1.0.0-rc.13"
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run pre-commit",
       "pre-push": "npm run pre-push",
       "...": "..."
     }
