@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Button, Icon, Input } from 'semantic-ui-react'
 
 import './index.css'
-import { login, autoLoginProcess } from '../../../state/processes/auth/login'
+import { login, autoLogin } from '../../../state/processes/auth/login'
 
 class LoginPage extends Component {
   constructor(props) {
@@ -58,4 +58,4 @@ class LoginPage extends Component {
   }
 }
 
-export default login(autoLoginProcess(LoginPage))
+export default login(autoLogin(LoginPage))

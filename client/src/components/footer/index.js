@@ -2,10 +2,7 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Icon } from 'semantic-ui-react'
-import isEmpty from 'lodash'
 
-import { selector as users } from '../../state/entities/users/reducer'
-import connected from '../../state/setup/connect'
 import './index.css'
 
 const { object, string } = PropTypes
@@ -17,8 +14,6 @@ class Footer extends Component {
   }
 
   render() {
-    const { users: { active }, pathname } = this.props
-    const showLinks = !isEmpty(this.props.users) || !active
     return (
       <div styleName="FooterContainer">
         <div className="copyright">
@@ -29,4 +24,4 @@ class Footer extends Component {
   }
 }
 
-export default connected([users], [])(Footer)
+export default Footer

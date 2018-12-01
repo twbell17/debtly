@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 
 import * as loginActions from './actions'
 import connected from '../../../setup/connect'
-import { selector as user } from '../../../entities/users/reducer'
+import { selector as users } from '../../../entities/users/reducer'
 import JWTVerify from '../jwt-verification'
 
 export const login = WrappedComponent => {
@@ -23,22 +23,22 @@ export const login = WrappedComponent => {
 export const autoLogin = WrappedComponent => {
   class AutoLogin extends React.Component {
     render() {
-      const { active } = this.props.user
-      if (active)
+      const user = this.props.users.active
+      if (user.userHandle)
         return <Redirect to={{ pathname: '/landing', state: { from: this.props.location } }} />
 
       return <WrappedComponent {...this.props}/>
     }
   }
 
-  return connected([user], [loginActions])(JWTVerify(AutoLogin))
+  return connected([users], [loginActions])(JWTVerify(AutoLogin))
 }
 
-const protectedRoute = WrappedComponent => {
+export const protectedRoute = WrappedComponent => {
   class PrivateRoute extends React.Component {
     render() {
-      const { active } = this.props.users
-      if (!active)
+      const user = this.props.users.active
+      if (!user.userHandle)
         return <Redirect to={{ pathname: '/', state: { from: this.props.location } }} />
 
       return <WrappedComponent {...this.props} />
