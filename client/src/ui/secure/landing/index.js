@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { protectedRoute } from '../.././../state/processes/auth/login'
-import './index.css'
+import CSSModules from 'react-css-modules'
+import css from './index.css'
 
 class LandingPage extends Component {
   render() {
@@ -12,4 +13,4 @@ class LandingPage extends Component {
   }
 }
 
-export default protectedRoute(LandingPage)
+export default protectedRoute(CSSModules(LandingPage, css))

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
-import './index.css'
+import CSSModules from 'react-css-modules'
+import css from './index.css'
 
 class Homepage extends Component {
   render() {
@@ -14,4 +14,4 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage
+export default CSSModules(Homepage, css)

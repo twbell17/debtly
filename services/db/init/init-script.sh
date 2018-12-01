@@ -1,6 +1,6 @@
 #!/bin/bash
 
-host="percv-db"
+host="debtly-db"
 adminUser="admin"
 
 psql -U $adminUser --echo-errors -q -f ~/create-db.sql

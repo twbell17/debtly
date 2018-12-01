@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import { Button, Icon, Input } from 'semantic-ui-react'
-
+import CSSModules from 'react-css-modules'
 // import * as process from './process'
 import connected from '../../../state/setup/connect'
-import './index.css'
+import css from './index.css'
 
 class CreateAccount extends Component {
   constructor(props) {
@@ -63,4 +63,4 @@ class CreateAccount extends Component {
   }
 }
 
-export default withRouter(connected([], [])(CreateAccount))
+export default withRouter(connected([], [])(CSSModules(CreateAccount, css)))

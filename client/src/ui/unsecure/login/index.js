@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Icon, Input } from 'semantic-ui-react'
-
-import './index.css'
+import CSSModules from 'react-css-modules'
+import css from './index.css'
 import { login, autoLogin } from '../../../state/processes/auth/login'
 
 class LoginPage extends Component {
@@ -58,4 +58,4 @@ class LoginPage extends Component {
   }
 }
 
-export default login(autoLogin(LoginPage))
+export default login(autoLogin(CSSModules(LoginPage, css)))

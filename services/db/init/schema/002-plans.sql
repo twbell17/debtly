@@ -7,5 +7,5 @@ create table if not exists plans
   last_updated_by uuid not null,
   last_updated_on timestamp not null
 );
-grant select, insert, update, delete on table plans to percv_app;
-grant select on table plans to percv_read;
+grant select, insert, update, delete on table plans to debtly_app;
+grant select on table plans to debtly_read;

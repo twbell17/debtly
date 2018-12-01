@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { protectedRoute } from '../.././../state/processes/auth/login'
+import CSSModules from 'react-css-modules'
 
-import './index.css'
+import css from './index.css'
 
 class ProfilePage extends Component {
   render() {
@@ -13,4 +14,4 @@ class ProfilePage extends Component {
   }
 }
 
-export default protectedRoute(ProfilePage)
+export default protectedRoute(CSSModules(ProfilePage, css))

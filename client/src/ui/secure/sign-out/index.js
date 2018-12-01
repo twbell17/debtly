@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
-import './index.css'
+import CSSModules from 'react-css-modules'
+import css from './index.css'
 
 class SignOutPage extends Component {
   render() {
@@ -12,4 +12,4 @@ class SignOutPage extends Component {
   }
 }
 
-export default SignOutPage
+export default CSSModules(SignOutPage, css)

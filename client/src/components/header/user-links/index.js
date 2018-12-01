@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import CSSModules from 'react-css-modules'
 
 import UserDropdown from './user-dropdown'
-import './index.css'
+import css from './index.css'
 
 const { string } = PropTypes
 
@@ -25,4 +26,4 @@ class UserLinks extends Component {
   }
 }
 
-export default withRouter(UserLinks)
+export default withRouter(CSSModules(UserLinks, css))

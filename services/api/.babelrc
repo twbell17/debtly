@@ -1,0 +1,16 @@
+{
+    "presets": [
+      ["env", {
+        "targets": {
+          "browsers": ["last 2 versions",  "> 5%", "ie >= 10"],
+          "node": "current"
+        }
+      }],
+      "stage-2"
+    ],
+    "plugins": [
+      "transform-export-extensions",
+      "transform-runtime"
+    ]
+  }
+  

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Button, Icon, Input } from 'semantic-ui-react'
 
 import { recoverProcess } from '../../../state/processes/auth/recover'
+import './index.css'
 
 class Recover extends Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class Recover extends Component {
         <div styleName="Content">
           <div styleName="Title">Forgot Password?</div>
           <div styleName="Description">We'll send you a recovery email</div>
-          <form styleName="form">
+          <form styleName="Form">
             <Input icon="user circle" iconPosition="left" size="big" placeholder="Your Email" type="text"
               value={this.state.email} onChange={this.handleInputEmail} />
             <Button type="button" animated color="green" onClick={this.handleClick}>

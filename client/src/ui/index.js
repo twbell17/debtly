@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
+import CSSModules from 'react-css-modules'
 
-import './index.css'
+import css from './index.css'
 import Header from '../components/header'
 import Footer from '../components/footer'
-
-
 
 // Secure Pages
 import Landing from './secure/landing'
@@ -28,9 +27,9 @@ class App extends Component {
   render() {
     const { pathname } = this.props.location
     return (
-        <div styleName="app-container">
+        <div styleName="appContainer">
             <Header pathname={pathname} />
-            <div styleName="left-side" />
+            <div styleName="leftSide" />
                 <Switch>
                     <Route exact path="/" component={Home} />,
                     <Route exact path="/login" component={Login} />,
@@ -45,11 +44,11 @@ class App extends Component {
                     <Route path="/profile" component={Profile} />
                     <Route component={BadRequest} />
                 </Switch>
-            <div styleName="right-side"/>
+            <div styleName="rightSide"/>
             <Footer pathname={pathname} />
         </div>
     )
   }
 }
 
-export default withRouter(App)
+export default withRouter(CSSModules(App, css))

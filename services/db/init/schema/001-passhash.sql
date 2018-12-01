@@ -4,5 +4,5 @@ create table if not exists passhash
     passhash text not null,
     mod_date timestamptz not null default now()
 );
-grant select, insert, update, delete on table passhash to percv_app;
-grant select on table passhash to percv_read;
+grant select, insert, update, delete on table passhash to debtly_app;
+grant select on table passhash to debtly_read;

@@ -12,5 +12,5 @@ create table if not exists users
     email text,
     joined_date timestamp
 );
-grant select, insert, update, delete on table users to percv_app;
-grant select on table users to percv_read;
+grant select, insert, update, delete on table users to debtly_app;
+grant select on table users to debtly_read;
