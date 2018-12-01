@@ -1,4 +1,6 @@
-.HeaderContainer{
+import styled from 'styled-components'
+
+export const HeaderContainer = styled('div')`
   grid-area: header;
   align-self: center;
   width: 100%;
@@ -12,15 +14,15 @@
   padding: 0 50px;
   box-shadow: 0px 5px 10px 0px  rgba(0,0,0,0.1);
   z-index: 2;
-}
+`
 
-.LogoContainer {
+export const LogoContainer = styled('div')`
   width: 85px;
-}
+`
 
-.ActiveLink {
+export const ActiveLink = styled('div')`
   > span {
     margin-right: 15px;
     color: black;
   }
-}
+`

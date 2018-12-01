@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Button, Icon, Input } from 'semantic-ui-react'
 
 import { recoverProcess } from '../../../state/processes/auth/recover'
-import './index.css'
+import { Content, Description, Title, Error, Form, Page} from './styles.js'
 
 class Recover extends Component {
   constructor(props) {
@@ -30,11 +30,11 @@ class Recover extends Component {
 
   render() {
     return (
-      <div styleName="Page">
-        <div styleName="Content">
-          <div styleName="Title">Forgot Password?</div>
-          <div styleName="Description">We'll send you a recovery email</div>
-          <form styleName="Form">
+      <Page>
+        <Content>
+          <Title>Forgot Password?</Title>
+          <Description>We'll send you a recovery email</Description>
+          <Form>
             <Input icon="user circle" iconPosition="left" size="big" placeholder="Your Email" type="text"
               value={this.state.email} onChange={this.handleInputEmail} />
             <Button type="button" animated color="green" onClick={this.handleClick}>
@@ -43,10 +43,10 @@ class Recover extends Component {
                 <Icon name="right arrow" />
               </Button.Content>
             </Button>
-          </form>
-          {this.state.error ? <div styleName="Error">Please provide an email</div> : null}
-        </div>
-      </div>
+          </Form>
+          {this.state.error ? <Error>Please provide an email</Error> : null}
+        </Content>
+      </Page>
     )
   }
 }

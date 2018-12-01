@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
-import css from './index.css'
+import { Page } from './styles'
 
 class SignOutPage extends Component {
   render() {
     return (
-      <div styleName="page">
+      <Page>
         Sign Out???
-      </div>
+      </Page>
     )
   }
 }
 
-export default CSSModules(SignOutPage, css)
+export default SignOutPage

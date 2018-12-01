@@ -1,4 +1,6 @@
-.StyledButton {
+import styled from 'styled-components'
+
+export const StyledButton = styled('div')`
   display: inline-block;
   :hover {
     .ui.basic.button{
@@ -13,4 +15,4 @@
     color: #2BC47B !important;
     box-shadow: 0 0 0 2px rgba(43, 196, 123, .6) inset;
   }
-}
+`

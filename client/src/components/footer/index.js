@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Icon } from 'semantic-ui-react'
 
-import './index.css'
+import { FooterContainer, Copyright } from './styles.js'
 
 const { object, string } = PropTypes
 
@@ -15,11 +15,11 @@ class Footer extends Component {
 
   render() {
     return (
-      <div styleName="FooterContainer">
+      <FooterContainer>
         <div className="copyright">
           <Icon name="copyright" />Debtly 2018. All rights resevered
         </div>
-      </div>
+      </FooterContainer>
     )
   }
 }

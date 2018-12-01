@@ -1,16 +1,15 @@
 import React, { Component } from 'react'
 import { protectedRoute } from '../.././../state/processes/auth/login'
-import CSSModules from 'react-css-modules'
-import css from './index.css'
+import { Page } from './styles'
 
 class LandingPage extends Component {
   render() {
     return (
-      <div styleName="page">
+      <Page>
         Landing Page
-      </div>
+      </Page>
     )
   }
 }
 
-export default protectedRoute(CSSModules(LandingPage, css))
+export default protectedRoute(LandingPage)

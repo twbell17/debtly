@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import CSSModules from 'react-css-modules'
 
 import UserDropdown from './user-dropdown'
-import css from './index.css'
+import { Content, DropdownContainer } from './styles'
 
 const { string } = PropTypes
 
@@ -16,14 +15,14 @@ class UserLinks extends Component {
   render() {
     const { pathname } = this.props
     return (
-      <div styleName="Content">
+      <Content>
         {pathname === '/landing' ? <Link to="/evaluation">New Evaluation</Link> : null}
-        <div styleName="DropdownContainer">
+        <DropdownContainer>
           <UserDropdown />
-        </div>
-      </div>
+        </DropdownContainer>
+      </Content>
     )
   }
 }
 
-export default withRouter(CSSModules(UserLinks, css))
+export default withRouter(UserLinks)

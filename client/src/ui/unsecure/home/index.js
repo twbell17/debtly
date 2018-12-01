@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
-import css from './index.css'
+import { Page, Content } from './styles'
 
 class Homepage extends Component {
   render() {
     return (
-      <div styleName="page" >
-        <div styleName="content">
+      <Page>
+        <Content>
           Welcome to Debtly.
-        </div>
-      </div>
+        </Content>
+      </Page>
     )
   }
 }
 
-export default CSSModules(Homepage, css)
+export default Homepage

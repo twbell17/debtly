@@ -1,4 +1,6 @@
-.appContainer {
+import styled from 'styled-components'
+
+export const AppContainer = styled('div')`
   width: 100%;
   height: 100%;
   display: flex;
@@ -13,14 +15,14 @@
     min-height: 0;
     min-width: 0;
   }
-}
+`
 
-.leftSide {
+export const LeftSide = styled('div')`
   grid-area: left;
   background-color: #f4f4f4;
-}
+`
 
-.rightSide {
+export const RightSide = styled('div')`
   grid-area: right;
   background-color: #f4f4f4
-}
+`

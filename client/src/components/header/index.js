@@ -7,7 +7,11 @@ import { selector as users } from '../../state/entities/users/reducer'
 import UserLinks from './user-links'
 import DefaultLinks from './nav-links'
 
-import './index.css'
+import {
+  ActiveLink,
+  HeaderContainer,
+  LogoContainer
+} from './styles'
 
 const { object, string } = PropTypes
 
@@ -22,16 +26,16 @@ class Header extends Component {
     const logoLink = active ? '/landing' : '/'
 
     return (
-      <div styleName="HeaderContainer">
+      <HeaderContainer>
         <Link to={logoLink}>
-            <div styleName="LogoContainer">
+            <LogoContainer>
               Debtly
-            </div>
+            </LogoContainer>
         </Link>
-        <div styleName="ActiveLink">
+        <ActiveLink>
           {active ? <UserLinks pathname={this.props.pathname} /> : <DefaultLinks />}
-        </div>
-      </div>
+        </ActiveLink>
+      </HeaderContainer>
     )
   }
 }

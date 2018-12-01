@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
-import CSSModules from 'react-css-modules'
 
-import css from './index.css'
+import { AppContainer, LeftSide, RightSide } from './styles.js'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
@@ -27,9 +26,9 @@ class App extends Component {
   render() {
     const { pathname } = this.props.location
     return (
-        <div styleName="appContainer">
+        <AppContainer>
             <Header pathname={pathname} />
-            <div styleName="leftSide" />
+            <LeftSide />
                 <Switch>
                     <Route exact path="/" component={Home} />,
                     <Route exact path="/login" component={Login} />,
@@ -44,11 +43,11 @@ class App extends Component {
                     <Route path="/profile" component={Profile} />
                     <Route component={BadRequest} />
                 </Switch>
-            <div styleName="rightSide"/>
+            <RightSide />
             <Footer pathname={pathname} />
-        </div>
+        </AppContainer>
     )
   }
 }
 
-export default withRouter(CSSModules(App, css))
+export default withRouter(App)

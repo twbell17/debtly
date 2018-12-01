@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import { protectedRoute } from '../.././../state/processes/auth/login'
-import CSSModules from 'react-css-modules'
 
-import css from './index.css'
+import { Page } from './styles'
 
 class ProfilePage extends Component {
   render() {
     return (
-      <div styleName="page">
+      <Page>
         Profile Page
-      </div>
+      </Page>
     )
   }
 }
 
-export default protectedRoute(CSSModules(ProfilePage, css))
+export default protectedRoute(ProfilePage)

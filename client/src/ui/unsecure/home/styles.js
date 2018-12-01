@@ -1,4 +1,6 @@
-.page {
+import styled from 'styled-components'
+
+export const Page = styled('div')`
   width: 100%;
   height: 100%;
   display: inline-grid;
@@ -9,10 +11,10 @@
     ". page ."
     ". . .";
   background-color: #f4f4f4;
-}
+`
 
-.content {
+export const Content = styled('div')`
   grid-area: page;
   align-self: center;
   justify-self: center;
-}
+`
