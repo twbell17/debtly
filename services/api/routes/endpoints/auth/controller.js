@@ -1,10 +1,11 @@
 import { authinticateLogin } from '../../commands/auth'
+import wrapAsyncFunc from '../../../common/async-wrapper'
 
 export default class AuthController {
   constructor(router) {
-    router.post('/login', this.login)
-    router.get('/jwt/login', this.loginByJwt)
-    router.post('/recover', this.recover)
+    router.post('/login', wrapAsyncFunc(this.login))
+    router.get('/jwt/login', wrapAsyncFunc(this.loginByJwt))
+    router.post('/recover', wrapAsyncFunc(this.recover))
   }
 
   async login(req, res) {

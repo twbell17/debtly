@@ -1,0 +1,9 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+}
+
+.SocialLinks {
+  display: flex;
+  flex-direction: row;
+}

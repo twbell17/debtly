@@ -1,0 +1,29 @@
+.title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .description {
+    font-size: 12px;
+    margin-bottom: 40px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .input {
+      margin-bottom: 20px;
+    }
+    :global {
+      .ui.big.input {
+        margin-bottom: 25px;
+      }
+      .ui.button {
+        margin: 0 0 20px 0;
+      }
+    }
+  }
+  
+  .loading {}
+  

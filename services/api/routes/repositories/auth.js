@@ -1,5 +1,5 @@
 import sql from 'sql-template-strings'
-import PGWrapper from '../../pg-wrapper'
+import PGWrapper from '../../common/pg-wrapper'
 
 export async function login(userHandle) {
   const query = sql`select * from passhash where user_handle = ${userHandle};`

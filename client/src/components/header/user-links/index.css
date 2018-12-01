@@ -1,0 +1,12 @@
+.Content {
+  display: flex;
+  flex-direction: row;
+
+  a {
+    color: #2BC47B;
+  }
+}
+.DropdownContainer {
+  margin-top: -10px;
+  margin-left: 30px;
+}

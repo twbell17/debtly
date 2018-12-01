@@ -6,7 +6,7 @@ import { fetchUserByEmail } from '../repositories/user'
 
 export async function authinticateLogin(email, password) {
   if (!email || !password) {
-    throw new Error({ status: 400, msg: 'Must provide username or password' })
+    throw new StatusError({ status: 400, msg: 'Must provide username or password' })
   }
   const user = await fetchUserByEmail(email)
   const userCreds = await login(user.userHandle)
@@ -31,14 +31,14 @@ export async function authinticateLogin(email, password) {
       user
     }
   } else {
-    throw new Error('Email or Password not found')
+    throw new StatusError({ status: 400, msg: 'Email or Password not found'})
   }
 }
 
 export async function authinticateLoginByJwt(token) {
   jwt.verify(token, process.env.JWT_SECRET, async (err, decoded) => {
     if (err)
-      throw new Error('JWT login problem')
+      throw new StatusError({ status: 400, msg: 'JWT login problem' })
 
     const currentTime = (new Date().getTime()) / 1000
     if (decoded.exp < currentTime) {
