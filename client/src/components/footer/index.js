@@ -3,16 +3,10 @@ import PropTypes from 'prop-types'
 import React, { Component } from 'react'
 import { Icon } from 'semantic-ui-react'
 
-import { FooterContainer, Copyright } from './styles.js'
+import { FooterContainer } from './styles.js'
 
-const { object, string } = PropTypes
 
 class Footer extends Component {
-  static propTypes = {
-    pathname: string.isRequired,
-    users: object.isRequired
-  }
-
   render() {
     return (
       <FooterContainer>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { protectedRoute } from '../.././../state/processes/auth/login'
+import { AutoLoginOrRedirect } from '../.././../state/processes/auth/login'
 import { Page } from './styles'
 
 class LandingPage extends Component {
@@ -12,4 +12,4 @@ class LandingPage extends Component {
   }
 }
 
-export default protectedRoute(LandingPage)
+export default AutoLoginOrRedirect(LandingPage)

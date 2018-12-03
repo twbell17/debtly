@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
 import { login } from '../repositories/auth'
-import { fetchUserByEmail } from '../repositories/user'
+import { fetchUserByEmail } from '../repositories/users'
 import { verifyAdmin } from '../repositories/admins'
 
 export async function authinticateLogin(email, password) {

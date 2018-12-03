@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Icon, Input } from 'semantic-ui-react'
 import { Page, Content, Title, Description, Form } from './styles'
-import { login, autoLogin } from '../../../state/processes/auth/login'
+import { Login, AutoLoginOrRedirect } from '../../../state/processes/auth/login/'
 
 class LoginPage extends Component {
   constructor(props) {
@@ -59,4 +59,4 @@ class LoginPage extends Component {
   }
 }
 
-export default login(autoLogin(LoginPage))
+export default Login(AutoLoginOrRedirect(LoginPage))

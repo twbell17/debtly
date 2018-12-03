@@ -45,7 +45,6 @@ export function* executeFetchUserByJWT() {
   const url = api.fetchByJWT.formatUrl()
   try {
     const res = yield call(api.fetchByJWT.request, url)
-    console.log('Res', res)
     yield put(fetchSuccess(res.data))
   } catch (res) {
     // eslint-disable-next-line noconsole

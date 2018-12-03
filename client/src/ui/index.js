@@ -21,6 +21,14 @@ import Register from './unsecure/register'
 import Recover from './unsecure/recover'
 import Reset from './unsecure/reset'
 
+export const unsecuredRoutes = [
+    '/',
+    '/login',
+    '/create-account',
+    '/forgot-password',
+    'faqs',
+    '/contact-us'
+]
 
 class App extends Component {
   render() {

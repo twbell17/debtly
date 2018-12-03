@@ -4,8 +4,14 @@ export const initialState = {
   active: {
     admin: false
   },
-  entities: []  
+  entities: [],
+  loading: false
 }
+
+const fetchingUserData = (state, { admin, user }) => ({
+  ...state,
+  loading: true
+})
 
 const loginUser = (state, { admin, user }) => ({
   ...state,
@@ -17,6 +23,7 @@ const loginUser = (state, { admin, user }) => ({
 
 
 const handlers = {
+  [TYPES.FETCH_USER_TOKEN_REQUEST]: fetchingUserData,
   [TYPES.FETCH_USER_TOKEN_SUCCESS]: loginUser,
 }
 

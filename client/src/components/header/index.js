@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 import connected from '../../state/setup/connect'
 import { selector as users } from '../../state/entities/users/reducer'
@@ -22,8 +22,8 @@ class Header extends Component {
   }
 
   render() {
-    const { active } = this.props.users
-    const logoLink = active ? '/landing' : '/'
+    const user = this.props.users.active
+    const logoLink = user && user.userHandle ? '/landing' : '/'
 
     return (
       <HeaderContainer>
@@ -33,11 +33,11 @@ class Header extends Component {
             </LogoContainer>
         </Link>
         <ActiveLink>
-          {active ? <UserLinks pathname={this.props.pathname} /> : <DefaultLinks />}
+          {user && user.userHandle ? <UserLinks pathname={this.props.pathname} /> : <DefaultLinks />}
         </ActiveLink>
       </HeaderContainer>
     )
   }
 }
 
-export default connected([users], [])(Header)
+export default withRouter(connected([users], [])(Header))

@@ -1,5 +1,5 @@
 import sql from 'sql-template-strings'
-import PGWrapper from '../../common/utils/pg-wrapper'
+import PGWrapper from '../../common/pg-wrapper'
 
 export async function verifyAdmin(userHandle) {
   const query = sql`select * from admins where user_handle = ${userHandle};`
