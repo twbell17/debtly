@@ -9,9 +9,7 @@ class LoginPage extends Component {
     super(props)
     this.state = {
       email: '',
-      password: '',
-      loading: false,
-      error: false
+      password: ''
     }
   }
 
@@ -25,7 +23,8 @@ class LoginPage extends Component {
     this.setState({ password: event.target.value })
   }
 
-  handleClick = () => {
+  handleSubmit = (event) => {
+    event.preventDefault()
     const { email, password } = this.state
     this.props.login(email, password)
   }
@@ -37,15 +36,13 @@ class LoginPage extends Component {
           <Title>Welcome to Debtly</Title>
           <Description> Sign in with your information below</Description>
           
-          {this.state.loading ? <div className="loading" /> : null}
-          {this.state.error ? <div>Please provide a correct email</div> : null}
-
-          <Form>
+   
+          <Form onSubmit={this.handleSubmit}>
             <Input icon="user circle" iconPosition="left" size="big" placeholder="Your Email" type="text"
               value={this.state.email} onChange={this.handleInputEmail} />
             <Input icon="user circle" iconPosition="left" size="big" placeholder="Enter Password" type="password"
               value={this.state.password} onChange={this.handleInputPassword} />
-            <Button type="button" animated color="green" onClick={this.handleClick}>
+            <Button type="submit" animated color="green">
               <Button.Content visible>Login</Button.Content>
               <Button.Content hidden>
                 <Icon name="right arrow" />
