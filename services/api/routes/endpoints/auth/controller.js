@@ -6,6 +6,7 @@ export default class AuthController {
     router.post('/login', wrapAsyncFunc(this.login))
     router.get('/jwt/login', wrapAsyncFunc(this.loginByJwt))
     router.post('/recover', wrapAsyncFunc(this.recover))
+    router.put('/logout', wrapAsyncFunc(this.logout))
   }
 
   async login(req, res) {
@@ -33,5 +34,9 @@ export default class AuthController {
   async recover(req, res) {
     const { email } = req.body
     res.sendStatus(200)
+  }
+
+  async logout(req, res) {
+    res.send({})
   }
 }

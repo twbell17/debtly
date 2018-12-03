@@ -52,7 +52,7 @@ class LoginPage extends Component {
               </Button.Content>
             </Button>
           </Form>
-          <Link to="/forgotten-password">Forgot Password?</Link>
+          <Link to="/forgot-password">Forgot Password?</Link>
         </Content>
       </Page>
     )

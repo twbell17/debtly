@@ -33,7 +33,7 @@ class Header extends Component {
             </LogoContainer>
         </Link>
         <ActiveLink>
-          {user && user.userHandle ? <UserLinks pathname={this.props.pathname} /> : <DefaultLinks />}
+          {user.userHandle ? <UserLinks /> : <DefaultLinks />}
         </ActiveLink>
       </HeaderContainer>
     )

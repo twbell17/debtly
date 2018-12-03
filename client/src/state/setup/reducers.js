@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
 import users from '../entities/users/reducer'
-import LOGOUT_TYPES from '../processes/auth/logout'
+import LOGOUT_TYPES from '../processes/auth/logout/types'
 
 const appReducer = combineReducers({
   users  
