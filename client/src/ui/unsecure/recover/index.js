@@ -17,7 +17,8 @@ class Recover extends Component {
     this.setState({ email: event.target.value })
   }
 
-  handleClick = () => {
+  handleSubmit= (event) => {
+    event.preventDefault()
     const { email } = this.state
     // TODO maybe add some more frontend validation
     if (!email) {
@@ -34,10 +35,10 @@ class Recover extends Component {
         <Content>
           <Title>Forgot Password?</Title>
           <Description>We'll send you a recovery email</Description>
-          <Form>
+          <Form onSubmit={this.handleSubmit}>
             <Input icon="user circle" iconPosition="left" size="big" placeholder="Your Email" type="text"
               value={this.state.email} onChange={this.handleInputEmail} />
-            <Button type="button" animated color="green" onClick={this.handleClick}>
+            <Button type="submit" animated color="green">
               <Button.Content visible>REMIND ME</Button.Content>
               <Button.Content hidden>
                 <Icon name="right arrow" />

@@ -4,7 +4,6 @@ export const FooterContainer = styled('div')`
   grid-area: footer;
   width: 100%;
   height: 100%;
-  min-height: 0;
   min-width: 0;
   overflow: hidden;
   display: flex;
@@ -12,7 +11,6 @@ export const FooterContainer = styled('div')`
   justify-content: space-between;
   align-content: flex-end;
   align-items: flex-end;
-  min-height: 60px;
   color: black;
   > .copyright {
     display: flex;

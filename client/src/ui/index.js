@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 
-import { AppContainer, LeftSide, RightSide } from './styles.js'
+import { AppContainer } from './styles.js'
 import Header from '../components/header'
 import Footer from '../components/footer'
 
@@ -36,22 +36,20 @@ class App extends Component {
     return (
         <AppContainer>
             <Header pathname={pathname} />
-            <LeftSide />
-                <Switch>
-                    <Route exact path="/" component={Home} />,
-                    <Route exact path="/login" component={Login} />,
-                    <Route exact path="/create-account" component={Register} />,
-                    <Route exact path="/forgot-password" component={Recover} />,
-                    <Route exact path="/reset-password" component={Reset} />,
-                    <Route exact path="/faqs" component={FAQs} />,
-                    <Route exact path="/contact-us" component={ContactUs} />,
+            <Switch>
+                <Route exact path="/" component={Home} />,
+                <Route exact path="/login" component={Login} />,
+                <Route exact path="/create-account" component={Register} />,
+                <Route exact path="/forgot-password" component={Recover} />,
+                <Route exact path="/reset-password" component={Reset} />,
+                <Route exact path="/faqs" component={FAQs} />,
+                <Route exact path="/contact-us" component={ContactUs} />,
 
-                    <Route exact path="/sign-out" component={SignOut} />
-                    <Route exact path="/landing" component={Landing} />
-                    <Route path="/profile" component={Profile} />
-                    <Route component={BadRequest} />
-                </Switch>
-            <RightSide />
+                <Route exact path="/sign-out" component={SignOut} />
+                <Route path="/landing" component={Landing} />
+                <Route path="/profile" component={Profile} />
+                <Route component={BadRequest} />
+            </Switch>
             <Footer pathname={pathname} />
         </AppContainer>
     )

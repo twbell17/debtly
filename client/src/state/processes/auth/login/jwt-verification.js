@@ -44,7 +44,6 @@ const AutoLoginOrRedirect = WrappedComponent => {
 
     render() {
       const user = this.props.users.active
-
       if (this.state.fetching) {
         return null
       }      
@@ -52,7 +51,7 @@ const AutoLoginOrRedirect = WrappedComponent => {
       if(this.state.loaded) {
         const { pathname } = this.props.location
         const unsecured = unsecuredRoutes.indexOf(pathname) >-1
-        const { history, location, loginActions, match, users, staticContext, ...originalProps } = this.props
+        const { history, location, loginActions, match, users, ...originalProps } = this.props
         
         if(typeof user.userHandle === 'undefined') {
           if(unsecured) { return <WrappedComponent {...originalProps} /> } 

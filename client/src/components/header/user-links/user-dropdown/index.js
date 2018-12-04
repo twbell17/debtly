@@ -5,6 +5,8 @@ import { Dropdown, Icon, Image } from 'semantic-ui-react'
 import connected from '../../../../state/setup/connect'
 import { selector as users } from '../../../../state/entities/users/reducer'
 
+import { AvatarSpan } from './styles'
+
 const options = [
   { key: 'profile', as: Link, to: '/profile', text: 'Account', icon: 'user' },
   { key: 'sign-out', as: Link, to: '/sign-out', text: 'Sign Out', icon: 'sign out' }
@@ -14,11 +16,12 @@ class HeaderNavLinks extends Component {
   render() {
     const user = this.props.users.active
     const trigger = (
-      <span>
+      <AvatarSpan>
         <Image avatar src={`${user.lastName}`} >
           <Icon circular disabled name="user" size="large" />
         </Image>
-      </span>
+        <Icon id="carrot" name="angle down" />
+      </AvatarSpan>
     )
 
     return [

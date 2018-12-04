@@ -23,7 +23,8 @@ class CreateAccount extends Component {
     this.setState({ [field]: event.target.value })
   }
 
-  handleSubmit = () => {
+  handleSubmit= (event) => {
+    event.preventDefault()
     const { username, password } = this.state
     this.props.login.fetch(username, password)
   }
@@ -32,7 +33,7 @@ class CreateAccount extends Component {
     return (
       <Page>
         <Content>
-          <Form>
+          <Form onSubmit={this.handleSubmit}>
             <Row>
               <Input placeholder="First name" type="text" onChange={this.handleInput('firstName')} />
               <Input placeholder="Last name" type="text" onChange={this.handleInput('lastName')} />
@@ -49,7 +50,7 @@ class CreateAccount extends Component {
             <Row>
               <Input icon="lock" placeholder="Confirm password" type="password" onChange={this.handleInput('confirmedPassword')} />
             </Row>
-            <Button type="button" animated color="green" onClick={this.handleSubmit}>
+            <Button type="submit" animated color="green">
               <Button.Content visible>Create Account</Button.Content>
               <Button.Content hidden>
                 <Icon name="right arrow" />

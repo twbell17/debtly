@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import UserDropdown from './user-dropdown'
-import { Content, DropdownContainer } from './styles'
+import { Content, DropdownContainer, DisplayName } from './styles'
 
 
 class UserLinks extends Component {
@@ -9,6 +9,9 @@ class UserLinks extends Component {
     return (
       <Content>
         <DropdownContainer>
+          <DisplayName>
+            {`${this.props.firstName} ${this.props.lastName}`}
+          </DisplayName>
           <UserDropdown />
         </DropdownContainer>
       </Content>

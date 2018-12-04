@@ -33,7 +33,9 @@ class Header extends Component {
             </LogoContainer>
         </Link>
         <ActiveLink>
-          {user.userHandle ? <UserLinks /> : <DefaultLinks />}
+          {user.userHandle ? 
+            <UserLinks firstName={user.firstName} lastName={user.lastName}/> 
+            : <DefaultLinks />}
         </ActiveLink>
       </HeaderContainer>
     )
